@@ -1,0 +1,4 @@
+# Not in pyproject.toml: see the note in ruff.toml.
+[run]
+branch = True
+source = app

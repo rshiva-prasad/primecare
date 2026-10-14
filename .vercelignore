@@ -1,0 +1,3 @@
+# The Vercel CLI does not read .gitignore, so keep local secrets out of `vercel deploy` uploads.
+.env
+.env.*

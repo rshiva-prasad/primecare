@@ -1,0 +1,1 @@
+"""PrimeCare Clinic backend (FastAPI)."""

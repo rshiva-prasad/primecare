@@ -1,0 +1,31 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+fastapi = "*"
+uvicorn = {extras = ["standard"], version = "*"}
+supabase = "*"
+pydantic-settings = "*"
+email-validator = "*"
+# Imported directly by app/gateway.py (also a supabase dependency); declared so it is not
+# only present transitively.
+httpx = "*"
+
+[dev-packages]
+pytest = "*"
+pytest-cov = "*"
+ruff = "*"
+mypy = "*"
+
+[scripts]
+dev = "uvicorn app.main:app --host 127.0.0.1 --port 8000 --reload --no-proxy-headers"
+test = "pytest"
+lint = "ruff check ."
+format = "ruff format ."
+typecheck = "mypy app"
+
+[requires]
+python_version = "3.12"
+python_full_version = "3.12.13"

@@ -1,0 +1,11 @@
+# Tool settings live in their own files, not pyproject.toml: Vercel's Python builder would treat a
+# pyproject.toml as the dependency manifest instead of the Pipfile.lock.
+line-length = 100
+target-version = "py312"
+
+[lint]
+select = ["E", "F", "I", "B", "UP", "S", "SIM"]
+
+[lint.per-file-ignores]
+# Tests use plain asserts and obviously fake credentials.
+"tests/**" = ["S101", "S105", "S106", "S107"]
